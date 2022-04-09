@@ -16,7 +16,7 @@ getLibraryAPI(queryURL);
 // load out information to page, titles, dates, subjects,descriptions, and links
 function loadResults(results) {
     for(var i = 0; i < results.length; i++){
-        var cardEl = $("<div>");
+        var cardEl = $("<div class='card p-3 m-3'>");
         
         var cardTitleEl = $("<h2>");
         cardTitleEl.text(results[i].title);
@@ -43,7 +43,7 @@ function loadResults(results) {
         }
         cardDescriptionEl.appendTo(cardEl);
 
-        var cardUrlEl = $("<a>");
+        var cardUrlEl = $("<a style='max-width: fit-content' class='btn btn-primary'>");
         cardUrlEl.text('Read more');
         cardUrlEl.attr('href',results[i].url)
         cardUrlEl.appendTo(cardEl);
@@ -58,4 +58,31 @@ function loadResults(results) {
         console.log("-------------------------------------------");
     }
 }
+
+//for new input
+var inputForm = $("#search-form");
+var selectBox = $("#select-box");
+var searchInput = $("#search-input");
+
+// Gets input from both the search diag box and options dropdown
+function submitSearchQuery(event) {
+    event.preventDefault();
+    sessionStorage.clear('inputUrl');
+    buildURL(searchInput.val(), selectBox.val());
+}
+
+// Builds URL with the user input provided from the submitSearchQuery function
+function buildURL (search, format) {
+    var tempLink = "https://www.loc.gov/" + format + "/?q=" + search + "&fo=json";
+    console.log(tempLink);
+    sendToHTML(tempLink);
+}
+
+// sends a HTML URL to our local storage so we can use on the second page
+function sendToHTML(url) {
+    window.sessionStorage.setItem("inputURL", JSON.stringify(url));
+    window.document.location.href = "./search.html";
+}
+
+$('#search-form').on('submit',submitSearchQuery);
 console.log(queryURL);
