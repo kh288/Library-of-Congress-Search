@@ -27,11 +27,20 @@ function loadResults(results) {
         cardDateEl.appendTo(cardEl);
 
         var cardSubjectEl = $("<p>");
-        cardSubjectEl.text(results[i].subject.join(', '));
+        if (results[i].subject){
+            console.log("SUBJECT IS TRUTHY")
+            cardSubjectEl.text(results[i].subject.join(', '));
+        }
         cardSubjectEl.appendTo(cardEl);
 
         var cardDescriptionEl = $("<p>");
-        cardDescriptionEl.text(results[i].description[0]);
+        if (typeof results[i].description === "undefined") {
+            console.log("Typeof is: " + typeof results[i].description);
+            // cardDescriptionEl.text(results[i].description);
+        } else {
+            console.log("Typeof is: " + typeof results[i].description);
+            cardDescriptionEl.text(results[i].description[0]);
+        }
         cardDescriptionEl.appendTo(cardEl);
 
         var cardUrlEl = $("<a>");
@@ -41,7 +50,6 @@ function loadResults(results) {
 
         cardEl.appendTo(searchContentEl);
         
-
         console.log(results[i].title);
         console.log(results[i].date);
         console.log(results[i].subject); // An array
