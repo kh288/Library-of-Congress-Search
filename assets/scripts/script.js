@@ -14,8 +14,19 @@ function getLibraryAPI(inputLink) {
         // console.log(response.json());
         return response.json();
     }).then(function(data) {
-        console.log(data);
+        //console.log(data);
     })
 }
 
+function submitSearchQuery(event){
+    event.preventdefault;
+    //$("option[value='search']")
+    console.log($('#search'))
+    console.log('hi')
+}
+
 getLibraryAPI(link);
+
+$('#search-form').click(submitSearchQuery())
+
+console.log($('#search-form'))
