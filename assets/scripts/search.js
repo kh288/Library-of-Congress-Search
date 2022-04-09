@@ -1,3 +1,5 @@
+const searchContentEl = $("#generate-content");
+
 var queryURL = window.sessionStorage.getItem("inputURL");
 queryURL = JSON.parse(queryURL);
 
@@ -14,6 +16,14 @@ getLibraryAPI(queryURL);
 
 function loadResults(results) {
     for(var i = 0; i < results.length; i++){
+        var cardEl = $("<div>");
+        
+        var cardTitleEl = $("<h2>");
+        cardTitleEl.text(results[i].title);
+        cardTitleEl.appendTo(cardEl);
+        
+        cardEl.appendTo(searchContentEl);
+
         console.log(results[i].title);
         console.log(results[i].date);
         console.log(results[i].subject); // An array
