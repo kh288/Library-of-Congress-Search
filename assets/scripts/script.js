@@ -38,6 +38,12 @@ function buildURL (search, format) {
 
     var tempLink = "https://www.loc.gov/" + format + "/?q=" + search + "&fo=json";
     console.log(tempLink);
+    saveURLToStorage(tempLink);
+}
+
+function saveURLToStorage(url)
+{
+    window.sessionStorage.setItem("inputURL", JSON.stringify(url));
 }
 
 $('#search-form').on('submit',submitSearchQuery);
