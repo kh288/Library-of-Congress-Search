@@ -58,4 +58,31 @@ function loadResults(results) {
         console.log("-------------------------------------------");
     }
 }
+
+//for new input
+var inputForm = $("#search-form");
+var selectBox = $("#select-box");
+var searchInput = $("#search-input");
+
+// Gets input from both the search diag box and options dropdown
+function submitSearchQuery(event) {
+    event.preventDefault();
+    sessionStorage.clear('inputUrl');
+    buildURL(searchInput.val(), selectBox.val());
+}
+
+// Builds URL with the user input provided from the submitSearchQuery function
+function buildURL (search, format) {
+    var tempLink = "https://www.loc.gov/" + format + "/?q=" + search + "&fo=json";
+    console.log(tempLink);
+    sendToHTML(tempLink);
+}
+
+// sends a HTML URL to our local storage so we can use on the second page
+function sendToHTML(url) {
+    window.sessionStorage.setItem("inputURL", JSON.stringify(url));
+    window.document.location.href = "./search.html";
+}
+
+$('#search-form').on('submit',submitSearchQuery);
 console.log(queryURL);
