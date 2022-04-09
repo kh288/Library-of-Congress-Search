@@ -61,8 +61,8 @@ Currently the Library of Congress Search only looks for keywords and media forma
 
 ## Authors
 
-* [Richard Ferry]()
-* [Kevin Hernandez]()
+* [Richard Ferry](https://github.com/rich-f-p)
+* [Kevin Hernandez](https://github.com/kh288)
 * [John Netzel](https://github.com/CommieDog)
 
 ## License
