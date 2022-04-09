@@ -6,9 +6,9 @@ A webpage that queries the Library of Congress records
 
 The Library of Congress Search is a website that searches for and displays results obtained from the Library of Congress servers. It displays results with basic details and a link to the relevant resource on the Library of Congress website.
 
-![Screencapture of planner showing data persistance.](https://github.com/CommieDog/one-day-planner/blob/main/assets/images/readme/one-day-planner-screencap.gif)
+![Screencapture of search site showing functionality.](https://github.com/CommieDog/one-day-planner/blob/main/assets/images/readme/loc-animated-example.gif)
 
-A sample deployment of the website is available on [GitHub Pages](https://commiedog.github.io/one-day-planner/).
+A sample deployment of the website is available on [GitHub Pages](https://kh288.github.io/Library-of-Congress-Search/).
 
 
 ## Table of Contents
@@ -23,10 +23,16 @@ A sample deployment of the website is available on [GitHub Pages](https://commie
 
 ## Description
 
+![Screenshot of landing page](https://github.com/CommieDog/one-day-planner/blob/main/assets/images/readme/screenshot-2.png)
+
 The Library of Congress Search opens to a simple landing page with a form for the user to enter search keywords and media format (as defined by the Library of Congress). Sumbitting the form causes the site to navigate to the results page. The results page takes the search criteria entered on the landing page and sends a request to the Library of Congress API through use of JavaScript's Fetch API.
+
+![Screenshot of results page](https://github.com/CommieDog/one-day-planner/blob/main/assets/images/readme/screenshot-2.png)
 
 When the Library of Congress Search receives a response, it parses through the response to retrieve the titles, dates, subjects, descriptions, and URLs for each item received from the server response. Once the response has been broken down, the results page constructs HTML code to display the results on itself.
 
+![Screencapture of search site showing format opitons](https://github.com/CommieDog/one-day-planner/blob/main/assets/images/readme/screenshot-3.png)
+*List of possible format options*
 
 ## Features
 
