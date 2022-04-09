@@ -23,7 +23,9 @@ A sample deployment of the website is available on [GitHub Pages](https://commie
 
 ## Description
 
-A
+The Library of Congress Search opens to a simple landing page with a form for the user to enter search keywords and media format (as defined by the Library of Congress). Sumbitting the form causes the site to navigate to the results page. The results page takes the search criteria entered on the landing page and sends a request to the Library of Congress API through use of JavaScript's Fetch API.
+
+When the Library of Congress Search receives a response, it parses through the response to retrieve the titles, dates, subjects, descriptions, and URLs for each item received from the server response. Once the response has been broken down, the results page constructs HTML code to display the results on itself. 
 
 
 ## Features
@@ -37,6 +39,7 @@ A
 * CSS
   * Bootstrap
 * JavaScript
+  * Fetch API
   * jQuery
 
 
