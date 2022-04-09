@@ -9,14 +9,12 @@
     <title>Library of Congress Search</title>
 </head>
 <body>
-    <header>
-        <h1>Library of Congress Search Engine</h1>
-    </header>
-    <main class="container">
-        <section class="container">
-            <form id="search-form" class="container container-fluid row justify-content-center input-group">
-                <input id="search-input" class="col-12" name="search-keywords" placeholder="Enter search keywords..."/>
-                <select id="select-box" class="col-12" name="search-domain">
+    <main class="d-flex min-vh-100 bg-secondary">
+        <section class="container-fluid my-auto bg-dark">
+            <h1 class="display-2 text-light text-center">Library of Congress Search Engine</h1>
+            <form id="search-form" class="container align-content-stretch input-group mb-3">
+                <input id="search-input" class="form-control" name="search-keywords" placeholder="Enter search keywords..."/>
+                <select id="select-box" class="form-select" name="search-domain">
                     <option value="search">All Formats</option>
                     <option value="maps">Maps</option>
                     <option value="audio">Audio</option>
@@ -27,7 +25,7 @@
                     <option value="notated-music">Printed Music</option>
                     <option value="websites">Websites</option>
                 </select>
-                <button class="col-12" type="submit">Search!</button>
+                <button class="form-control" type="submit">Search!</button>
             </form>
         </section>
     </main>
