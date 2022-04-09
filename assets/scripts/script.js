@@ -7,6 +7,10 @@
 // https://www.loc.gov/manuscript/?q= USER\INPUT &fo=json
 
 var link = "https://www.loc.gov/?fo=json&at=trending_content";
+var searchInput = "";
+var inputForm = $("#search-form");
+var selectBox = $("#select-box");
+var searchInput = $("#search-input");
 
 function getLibraryAPI(inputLink) {
     fetch(inputLink)
@@ -17,16 +21,23 @@ function getLibraryAPI(inputLink) {
         //console.log(data);
     })
 }
+// getLibraryAPI(link);
 
+// Gets input from both the search diag box and options dropdown
 function submitSearchQuery(event){
-    event.preventdefault;
-    //$("option[value='search']")
-    console.log($('#search'))
-    console.log('hi')
+    event.preventDefault();
+    // console.log(searchInput.val());
+    // console.log(selectBox.val());
+    buildURL(searchInput.val(), selectBox.val());
 }
 
-getLibraryAPI(link);
+// Builds URL with the user input provided from the submitSearchQuery function
+function buildURL (search, format) {
+    // https://www.loc.gov/search/?q= USERINPUT &fo=json
+    // https://www.loc.gov/manuscript/?q= USERINPUT &fo=json
 
-$('#search-form').click(submitSearchQuery())
+    var tempLink = "https://www.loc.gov/" + format + "/?q=" + search + "&fo=json";
+    console.log(tempLink);
+}
 
-console.log($('#search-form'))
+$('#search-form').on('submit',submitSearchQuery);
