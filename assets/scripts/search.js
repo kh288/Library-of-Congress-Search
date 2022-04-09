@@ -16,7 +16,7 @@ getLibraryAPI(queryURL);
 // load out information to page, titles, dates, subjects,descriptions, and links
 function loadResults(results) {
     for(var i = 0; i < results.length; i++){
-        var cardEl = $("<div>");
+        var cardEl = $("<div class='card p-3 m-3'>");
         
         var cardTitleEl = $("<h2>");
         cardTitleEl.text(results[i].title);
@@ -43,7 +43,7 @@ function loadResults(results) {
         }
         cardDescriptionEl.appendTo(cardEl);
 
-        var cardUrlEl = $("<a>");
+        var cardUrlEl = $("<a style='max-width: fit-content' class='btn btn-primary'>");
         cardUrlEl.text('Read more');
         cardUrlEl.attr('href',results[i].url)
         cardUrlEl.appendTo(cardEl);
