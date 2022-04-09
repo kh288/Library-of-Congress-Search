@@ -11,12 +11,11 @@ var selectBox = $("#select-box");
 var searchInput = $("#search-input");
 
 // Gets input from both the search diag box and options dropdown
-function submitSearchQuery(event){
+function submitSearchQuery(event) {
     event.preventDefault();
     // console.log(searchInput.val());
     // console.log(selectBox.val());
     buildURL(searchInput.val(), selectBox.val());
-
 }
 
 // Builds URL with the user input provided from the submitSearchQuery function
