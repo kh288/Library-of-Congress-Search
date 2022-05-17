@@ -1,4 +1,4 @@
-# Library-of-Congress-Search
+# Library of Congress Search
 A webpage that queries the Library of Congress records
 
 
